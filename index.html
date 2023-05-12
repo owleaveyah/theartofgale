@@ -1,172 +1,480 @@
-<!DOCTYPE html>
 <html>
 	<head>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>
-		body {
-			margin:0;
-			background-color: rgb(9, 9, 25, 1.00);
-			color: rgba(255, 255, 255, 0.80);
-			animation: fadeInAnimation ease 1s;
-			animation-iteration-count: 1;
-			animation-fill-mode: forwards;
-		}
-		@keyframes fadeInAnimation {
-			0% {
-				opacity: 0;
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			@keyframes fadeInAnimation {
+				0% {
+					opacity: 0;
+				}
+				100% {
+					opacity: 1;
+				}
 			}
-			100% {
-				opacity: 1;
+			body {
+				margin:0;
+				background-color: rgb(9, 9, 25, 0.95);
+				color: rgba(255, 255, 255, 1.00);
+				animation: fadeInAnimation ease 1s;
+				animation-iteration-count: 1;
+				animation-fill-mode: forwards;
 			}
-		}
-		@font-face {
-			font-family: OpenSans-Light;
-			src: url(https://raw.githubusercontent.com/owleaveyah/theartofgale/main/files/OpenSans-Light.ttf);
-		}
-		@font-face {
-			font-family: Raleway-Regular;
-			src: url(https://raw.githubusercontent.com/owleaveyah/theartofgale/main/files/Raleway-Regular.ttf);
-		}
-		div {
-			font-family: OpenSans-Light;
-		}
-		div h1 {
-			font-family: Raleway-Regular;
-		}
-		.navbar {
-			backdrop-filter: blur(5px);
-			overflow: hidden;
-			background-color: rgba(0, 0, 0, 0.80);
-			position: fixed;
-			top: 0;
-			width: 100%;
-			padding: 5px 0px;
-		}
-		.navbar a {
-			float: left;
-			display: block;
-			color: rgba(255, 255, 255, 0.80);
-			text-align: center;
-			padding: 14px 25px;
-			text-decoration: none;
-			font-size: 17px;
-		}
-		.navbar img {
-			float: left;
-			text-align: center;
-			padding: 5px 125px;
-			text-decoration: none;
-			font-size: 17px;
-		}
-		.navbar-right {
-			float: right;
-			padding: 20px 120px;
-		}
-		.navbar a:hover {
-			background: #ddd;
-			color: black;
-			border-radius: 9px;
-			animation: fadeInAnimation ease 1s;
-			animation-iteration-count: 1;
-			animation-fill-mode: forwards;
-		}
-		.main {
-			padding: 90px 100px;
-			width: 90%;
-			margin-top: 30px;
-			height: 400px; /* Used in this example to enable scrolling */
-		}
-		.main img {
-			float: right;
-			padding: 0px 50px;
-			transition: 0.7s;
-			border-radius: 9px;
-		}
-		.content1 {
-			background: rgba(0, 0, 0, 0.25);
-			width: 100%;
-			padding: 10px 30px 10px 30px;
-			box-sizing: border-box;
-			border-radius: 9px;
-			backdrop-filter: blur(10px);
-			animation: fadeInAnimation ease 1s;
-			animation-iteration-count: 1;
-			animation-fill-mode: forwards;
-		}
-		.content1 img {
-			border-radius: 1%;
-		}
-		#tab1 {
-			background-color: rgba(255, 0, 0, 1.0);
-			background-image: url("https://i.pinimg.com/originals/71/f1/b9/71f1b924a56150104ec16828f2d31b7f.gif");
-			background-attachment: fixed;
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: cover;
-		}
-		#tab2 {
-			background-color: rgba(0, 255, 0, 1.0);
-			background-image: url("https://wallpaperaccess.com/full/2825711.gif");
-			background-attachment: fixed;
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: cover;
-		}
-		#tab3 {
-			background-color: rgba(170, 250, 0, 1.0);
-			background-image: url("https://i.pinimg.com/originals/19/6a/d9/196ad9d3122098b297d7b99ce9ff209f.gif");
-			background-attachment: fixed;
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: cover;
-		}
-		#tab4 {
-			background-color: rgba(100, 100, 100, 1.0);
-			background-image: url("https://i.pinimg.com/originals/b2/2a/a2/b22aa22b2f3f55b6468361158d52e2e7.gif");
-			background-attachment: fixed;
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: cover;
-		}
-	</style>
+			@font-face {
+				font-family: Cyrene;
+				src: url(https://owleaveyah.github.io/theartofgale/files/fonts/Cyrene_Regular.otf);
+
+			}
+			@font-face {
+				font-family: OpenSans-Light;
+				src: url(https://owleaveyah.github.io/theartofgale/files/fonts/OpenSans-Light.ttf);
+			}
+			div {
+				font-family: OpenSans-Light;
+			}
+			div h2 {
+				font-family: Cyrene;
+			}
+			.main {
+				height: 290px; /* Used in this example to enable scrolling */
+				padding: 190px 250px;
+				transition: 0.7s;
+				animation: fadeInAnimation ease 3s;
+				animation-iteration-count: 1;
+				animation-fill-mode: forwards;
+			}
+			.main_link {
+				height: 15px; /* Used in this example to enable scrolling */
+				padding: 10px 250px;
+				transition: 0.7s;
+			}
+			.main_separator {
+				height: 1px; /* Used in this example to enable scrolling */
+				padding: 5px 250px;
+				transition: 0.7s;
+			}
+			.main img {
+				box-shadow: inset 0 25px 85px rgba(0, 0, 0, 0.4);
+				margin: 20;
+				padding: 25px 0px;
+				float: right;
+				transition: 0.7s;
+				animation: fadeInAnimation ease 4s;
+				animation-iteration-count: 1;
+				animation-fill-mode: forwards;
+			}
+			#tab1 {
+				background-color: rgba(255, 0, 0, 1.0);
+				background-image: url("https://i.pinimg.com/originals/71/f1/b9/71f1b924a56150104ec16828f2d31b7f.gif");
+				background-attachment: fixed;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			#tab2 {
+				background-color: rgba(0, 255, 0, 1.0);
+				background-image: url("https://wallpaperaccess.com/full/2825711.gif");
+				background-attachment: fixed;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			#tab3 {
+				background-color: rgba(170, 250, 0, 1.0);
+				background-image: url("https://i.pinimg.com/originals/19/6a/d9/196ad9d3122098b297d7b99ce9ff209f.gif");
+				background-attachment: fixed;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			#tab4 {
+				background-color: rgba(100, 100, 100, 1.0);
+				background-image: url("https://i.pinimg.com/originals/b2/2a/a2/b22aa22b2f3f55b6468361158d52e2e7.gif");
+				background-attachment: fixed;
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+			}
+			.content1 {
+				background: rgba(0, 0, 0, 0.25);
+				width: 100%;
+				padding: 10px 30px 10px 30px;
+				box-sizing: border-box;
+				border-radius: 9px;
+				backdrop-filter: blur(10px);
+				animation: fadeInAnimation ease 1s;
+				animation-iteration-count: 1;
+				animation-fill-mode: forwards;
+			}
+			.content1 img {
+				border-radius: 9px;
+			}
+			#imgHolder {
+				width: 70%;
+				height: 65%;
+				display: block;
+				position: relative;
+			}
+			 #imgHolder::before {
+				content:"";
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				position: absolute;
+				background-image:url(https://owleaveyah.github.io/theartofgale/files/images/sample_portrait_set1.png);
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				-webkit-transition: opacity 1s ease-in-out;
+				-moz-transition: opacity 1s ease-in-out;
+				-o-transition: opacity 1s ease-in-out;
+				transition: opacity 1s ease-in-out;
+				z-index:10;
+				border-radius: 9px;
+			}
+			#imgHolder:hover::before {
+				opacity:0;
+			}
+			#imgHolder::after {
+				content:"";
+				background: url(https://owleaveyah.github.io/theartofgale/files/images/sample_portrait_set2.png);
+				background-position: center;
+				background-repeat: no-repeat;
+				background-size: cover;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				right: 0;
+				position: absolute;
+				z-index: -1;
+				border-radius: 9px;
+			}
+		</style>
 	</head>
 	<body>
+		<div class="main_separator"><a id="website_about"></a></div>
 		<div class="main">
-			<img src="https://raw.githubusercontent.com/owleaveyah/theartofgale/main/files/sample_image.jpg" width="420" height="420">
-			<font color=33DAFF size="3" face="Verdana"><h1>About</h1><font color=FFFFFF>
-			<p>Olivia Gale Gerochi – also known as Gale – is a multidisciplinary creative and artist based in Iloilo City, Philippines. Painting and drawing are Gale’s primary practices, also used as dominant instruments for expanding into various forms including mix media, multimedia, and handcraft. She has also delved deep into literary genres such as scriptwriting, creative writing, and poetry as an insatiable reader and writer.</p>
+			<img src="https://owleaveyah.github.io/theartofgale/files/images/sample_profile.png" width="300" height="300">
+			<font color=33DAFF size="4"><h1>About</h1></font><font color=FFFFFF>
+			<p>Olivia Gale Gerochi – also known as Gale – is a multidisciplinary creative and artist based in Iloilo City, Philippines. Painting and drawing are Gale’s primary practices, also used as dominant instruments for expanding into various forms including mix media, multimedia, and handcraft.</p>
+			<p>She has also delved deep into literary genres such as scriptwriting, creative writing, and poetry as an insatiable reader and writer.</p>
 			<p>Gale has a passion for telling tales in visual and unique ways. Through concept art, storytelling, and illustration, she seeks to impart depth and meaning. In her work, she looks for the connections between emotions, interpretations, and unreality.</p>
+			<a id="website_porfolio"></a>
 		</div>
+		<div class="main_separator"><a id="website_porfolio"></a></div>
+		<div id="tab2">
+			<div class="content1">
+				<center><font color=FFFFFF><h1>Artistic Endeavours</h1></font></center>
+				<style>
+					.mySlides {display: none}
+					img {vertical-align: middle;}
+					.slideshow-container {
+						max-width: 60%;
+						position: relative;
+						margin: auto;
+					}
+/* Next & previous buttons */
+.prev, .next {
+	cursor: pointer;
+	position: absolute;
+	top: 50%;
+	width: auto;
+	padding: 16px;
+	margin-top: -22px;
+	color: white;
+	background-color: rgba(0,0,0,0.8);
+	font-weight: bold;
+	font-size: 18px;
+	transition: 0.6s ease;
+	border-radius: 9px;
+	user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+	right: 0;
+	border-radius: 9px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+	background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+	color: #f2f2f2;
+	font-size: 15px;
+	padding: 30px 0px;
+	position: absolute;
+	width: 100%;
+	text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+	color: #f2f2f2;
+	font-size: 12px;
+	padding: 8px 12px;
+	position: absolute;
+	top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+	cursor: pointer;
+	height: 15px;
+	width: 15px;
+	margin: 0 2px;
+	background-color: #bbb;
+	border-radius: 50%;
+	display: inline-block;
+	transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+	background-color: #717171;
+}
+
+/* Fading animation */
+.fade {
+	animation-name: fade;
+	animation-duration: 1.5s;
+}
+
+@keyframes fade {
+	from {opacity: .4} 
+	to {opacity: 1}
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+	.prev, .next,.text {font-size: 11px}
+}
+
+				</style>
+				<div class="slideshow-container">
+				<div class="mySlides fade">
+					<div class="numbertext">1 / 10</div>
+					<img src="https://owleaveyah.github.io/theartofgale/files/gallery/001_gallery.png" style="width:100%">
+					<div class="text">
+						<font color=FFC300 size="1"><h1>“The Candle Lady”</h1> 1 / 2</font><font color=FFFFFF size="2">
+						<p>HeARTy Holidays Group Art Show (Festive Mall, Megaworld)</p>
+						<p>Mix Media (6x20")</p>
+					</div>
+				</div>
+
+				<div class="mySlides fade">
+					<div class="numbertext">2 / 10</div>
+					<img src="https://owleaveyah.github.io/theartofgale/files/gallery/002_gallery.png" style="width:100%">
+					<div class="text">
+						<font color=FFC300 size="1"><h1>“The Candle Lady”</h1> 2 / 2</font><font color=FFFFFF size="2">
+						<p>HeARTy Holidays Group Art Show (Festive Mall, Megaworld)</p>
+						<p>Mix Media (6x20")</p>
+					</div>
+				</div>
+
+				<div class="mySlides fade">
+					<div class="numbertext">3 / 10</div>
+					<img src="https://owleaveyah.github.io/theartofgale/files/gallery/003_gallery.png" style="width:100%">
+					<div class="text">
+						<font color=FFC300 size="1"><h1>“The Head Turner Wall”</h1></font><font color=FFFFFF size="2">
+						<p>(Iloilo City Community College, Molo)</p>
+						<p>A collaborative mural project with Local Artists and fellow Waldorf Students.</p>
+					</div>
+				</div>
+				
+				<div class="mySlides fade">
+					<div class="numbertext">4 / 10</div>
+					<img src="https://owleaveyah.github.io/theartofgale/files/gallery/004_gallery.png" style="width:100%">
+					<div class="text">
+						<font color=FFC300 size="1"><h1>“School Project - Painting Replication”</h1></font><font color=FFFFFF size="2">
+						<p>2020</p>
+						<p>Painting: Peter Paul Rubens - Landscape with the Ruins of Mount Palatine in Rome</p>
+					</div>
+				</div>
+
+				<div class="mySlides fade">
+					<div class="numbertext">5 / 10</div>
+					<img src="https://owleaveyah.github.io/theartofgale/files/gallery/005_gallery.png" style="width:100%">
+					<div class="text">
+						<font color=FFC300 size="1"><h1>“Acrylic Painting Practice”</h1></font><font color=FFFFFF size="2">
+						<p>2016</p>
+					</div>
+				</div>
+
+				<div class="mySlides fade">
+					<div class="numbertext">6 / 10</div>
+					<img src="https://owleaveyah.github.io/theartofgale/files/gallery/006_gallery.png" style="width:100%">
+					<div class="text">
+						<font color=FFC300 size="1"><h1>“Rio” Portrait</h1></font><font color=FFFFFF size="2">
+						<p>A Commissioned Piece - Watercolor on Paper</p>
+					</div>
+				</div>
+
+				<div class="mySlides fade">
+					<div class="numbertext">7 / 10</div>
+					<img src="https://owleaveyah.github.io/theartofgale/files/gallery/007_gallery.png" style="width:100%">
+					<div class="text">
+						<font color=FFC300 size="1"><h1>“Halcyon - Where Two Oceans Meet”</h1> 1 / 2</font><font color=FFFFFF size="2">
+						<p>A Commissioned Piece.</p>
+					</div>
+				</div>
+
+				<div class="mySlides fade">
+					<div class="numbertext">8 / 10</div>
+					<img src="https://owleaveyah.github.io/theartofgale/files/gallery/008_gallery.png" style="width:100%">
+					<div class="text">
+						<font color=FFC300 size="1"><h1>“Halcyon - Where Two Oceans Meet”</h1> 2 / 2</font><font color=FFFFFF size="2">
+						<p>A Commissioned Piece.</p>
+					</div>
+				</div>
+
+				<div class="mySlides fade">
+					<div class="numbertext">9 / 10</div>
+					<img src="https://owleaveyah.github.io/theartofgale/files/gallery/009_gallery.png" style="width:100%">
+					<div class="text">
+						<font color=FFC300 size="1"><h1>“Greggy” - Mixed Media Art</h1></font><font color=FFFFFF size="2">
+						<p>Inspired by Gregory the gargoyle from The Sandman, but if only he were the complete opposite of lovely and adorable...</p>
+						<p>Traditional drawings on paper using Graphite, Ink, and Charcoal.</p>
+						<p>(22, 9x30, 5cm)</p>
+					</div>
+				</div>
+
+				<div class="mySlides fade">
+					<div class="numbertext">10 / 10</div>
+					<img src="https://owleaveyah.github.io/theartofgale/files/gallery/010_gallery.png" style="width:100%">
+					<div class="text">
+						<font color=FFC300 size="1"><h1>“The Paladin's Chase” - Mixed Media Art</h1></font><font color=FFFFFF size="2">
+						<p>This piece is what I made for "Scurry" prompt for Inktober 2022. What else can depict quick movements better than a chase?</p>
+						<p>Traditional drawings on paper using Graphite, Ink, and Charcoal.</p>
+						<p>(22, 9x30, 5cm)</p>
+					</div>
+				</div>
+
+				<a class="prev" onclick="plusSlides(-1)">❮</a>
+				<a class="next" onclick="plusSlides(1)">❯</a>
+
+				</div>
+				<br>
+				<div style="text-align:center">
+					<span class="dot" onclick="currentSlide(1)"></span> 
+					<span class="dot" onclick="currentSlide(2)"></span> 
+					<span class="dot" onclick="currentSlide(3)"></span> 
+					<span class="dot" onclick="currentSlide(4)"></span> 
+					<span class="dot" onclick="currentSlide(5)"></span> 
+					<span class="dot" onclick="currentSlide(6)"></span> 
+					<span class="dot" onclick="currentSlide(7)"></span> 
+					<span class="dot" onclick="currentSlide(8)"></span> 
+					<span class="dot" onclick="currentSlide(9)"></span> 
+					<span class="dot" onclick="currentSlide(10)"></span> 
+				</div>
+				<script>
+				let slideIndex = 1;
+				showSlides(slideIndex);
+				function plusSlides(n) {
+					showSlides(slideIndex += n);
+				}
+				function currentSlide(n) {
+					showSlides(slideIndex = n);
+				}
+				function showSlides(n) {
+					let i;
+					let slides = document.getElementsByClassName("mySlides");
+					let dots = document.getElementsByClassName("dot");
+					if (n > slides.length) {slideIndex = 1}		
+					if (n < 1) {slideIndex = slides.length}
+					for (i = 0; i < slides.length; i++) {
+						slides[i].style.display = "none";	
+					}
+					for (i = 0; i < dots.length; i++) {
+						dots[i].className = dots[i].className.replace(" active", "");
+					}
+					slides[slideIndex-1].style.display = "block";	
+					dots[slideIndex-1].className += " active";
+				}
+				</script>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+				<br>
+			</div>
+		</div>
+		<div class="main_separator"><a id="website_porfolio"></a></div>
 		<div id="tab1">
 			<div class="content1">
 				<center>
-				<font color=FFFFFF size="2" face="Verdana"><h1>Cinematic Digital Illustration - Concept Art</h1>
-				<center><img src="https://raw.githubusercontent.com/owleaveyah/theartofgale/main/files/sample_dystopian_china_town.png" alt="Cinque Terre" width="1000" height="600"></center>
-				<font color=FFC300 size="2" face="Verdana"><h1>Dystopian Chinatown</h1><font color=FFFFFF size="2">
-				<p>I got inspired by the decaying cybercity from the video-game “Stray” by BlueTwelve Studio.</p>
+				<br>
+				<img src="https://owleaveyah.github.io/theartofgale/files/images/sample_dystopian_china_town.png" alt="Cinque Terre" width="60%" height="70%">
+				<font color=FFC300 size="2"><h1>“Dystopian Chinatown”</h1></font><font color=FFFFFF size="2">
+				<font color=FFFFFF size="3"><b>Digital Cinematic Illustration - Concept Art</b></font>
+				<p>I got inspired by the decaying cybercity from the video-game 'Stray' by BlueTwelve Studio.</p>
 				<p>I included certain game-related themes into these works along with my own, unidentified characters that are open to interpretation.</p>
-				<p>Used PaintTool SAI & Photoshop</p>
+				<p>Used PaintTool SAI & Photoshop.</p>
+				</center>
 			</div>
 		</div>
+		<div class="main_separator"></div>
+		<div id="tab3">
+			<div class="content1">
+				<center>
+				<br>
+				<div id="imgHolder"></div>
+				<font color=FFC300 size="1"><h1>“Realistic Line Drawing”</h1></font><font color=FFFFFF size="2">
+				<p>Made with Photoshop - hover mouse over the image.</p>
+				</center>
+			</div>
+		</div>
+		<div class="main_link"><font size="1"><center>© 2023 "Designed by Olivia Gerochi"</center></font></div>
 		<div class="navbar">
-			<img src="https://raw.githubusercontent.com/owleaveyah/theartofgale/main/files/sample_logo.png" alt="Cinque Terre" width="125" height="75">
+			<style>
+				.navbar {
+					backdrop-filter: blur(5px);
+					overflow: hidden;
+					background-color: rgba(0, 0, 0, 0.80);
+					position: fixed;
+					top: 0;
+					width: 100%;
+					padding: 5px 0px;
+				}
+				.navbar a {
+					float: left;
+					display: block;
+					color: rgba(255, 255, 255, 0.80);
+					text-align: center;
+					padding: 14px 25px;
+					text-decoration: none;
+					font-size: 17px;
+				}
+				.navbar img {
+					float: left;
+					text-align: center;
+					padding: 5px 125px;
+					text-decoration: none;
+					font-size: 17px;
+				}
+				.navbar-right {
+					float: right;
+					padding: 20px 120px;
+				}
+				.navbar a:hover {
+					background: #ddd;
+					color: black;
+					border-radius: 9px;
+					animation: fadeInAnimation ease 1s;
+					animation-iteration-count: 1;
+					animation-fill-mode: forwards;
+				}
+			</style>
+			<img src="https://owleaveyah.github.io/theartofgale/files/images/sample_logo.png" alt="Cinque Terre" width="15%" height="15%">
 			<div class="navbar-right">
-				<a class="active" href="#about">About</a>
-				<a href="#home">Porfolio</a>
+				<a href="#website_about">About</a>
+				<a href="#website_porfolio">Porfolio</a>
 				<a href="#contact">Contact</a>
 			</div>
-		</div>
-		<div class="main">
-			<font color=33DAFF size="3" face="Verdana"><h1>Artistic Endeavors</h1><font color=FFFFFF>
-			<p>• Currently - Layout Artist in Damlag Youth Organization -  Maasin Project</p>
-			<p>• The Candle Lady – Mix Media Painting - HeARTy Holidays Group Art show- Festive Mall Megaworld</p>
-			<p>• The Head Turner Wall outside the Iloilo City Community College, Molo (2020)</p>
-			<p>• “Halcyon“ - Commissioned Piece BIR Office</p>
-			<p>• Logo and Graphic Design</p>
-			<p>• Film-making and Acting </p>
-			<p>• Music Composition</p>
-			<p>• Trying out new things - Creating short covers on Garageband</p>
-			<p>• Filipino Mythology and Filipino Comic book enthusiast</p>
 		</div>
 	</body>
 </html>
